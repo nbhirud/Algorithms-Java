@@ -10,7 +10,7 @@ package com.nbhirud.sortingalgorithms;
  * @author nbhirud
  */
 //LCS class which implements the LCS memorized algorithm 
-public class LCS {
+public class LCS {  
 
     private String s1 = new String();
     private String s2 = new String();

@@ -11,7 +11,7 @@ package com.nbhirud.sortingalgorithms;
  * @author nbhirud
  */
 //Main Class which invokes the LCS memorized method and prints result. 
-public class LCSManager { 
+public class LCSManager {  
  
  	public static void main(String[] args) { 
  	 	LCS newLCS = new LCS(args[0], args[1]); 

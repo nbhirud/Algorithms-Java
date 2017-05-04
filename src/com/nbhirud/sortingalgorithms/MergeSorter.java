@@ -37,7 +37,7 @@ public class MergeSorter {
     private void merge(int low, int mid, int high) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         System.out.println("sorter. low = " + low + ", mid = " + mid + ", high = " + high);
-        int[] n = new int[high - low];
+        int[] n = new int[high - low + 1];
         int i = low, j = mid + 1, k = 0;
         //while (k < (high - low)) {
         while ((i<=mid)&&(j<=high)) {
@@ -70,8 +70,11 @@ public class MergeSorter {
             j++;
             k++;
         }
+        System.out.print("Writing to data[] ----------------------- ");
         for (int d = 0; d < (high - low); d++) {
             data[low + d] = n[d];
+            System.out.print(n[d]+" ");
         }
+        System.out.println();
     }
 }

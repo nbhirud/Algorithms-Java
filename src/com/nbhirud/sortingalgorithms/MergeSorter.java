@@ -13,8 +13,13 @@ public class MergeSorter {
 
     int[] data;
 
-    MergeSorter(int[] d) {
-        data = d;
+    MergeSorter(int[] dt) {
+        data = dt;
+        System.out.print("Original state of data[] ++++++++++++++++++++++ ");
+        for (int d : data) {
+            System.out.print(d);
+        }
+        System.out.println();
     }
 
     public int[] sort() {
@@ -44,13 +49,13 @@ public class MergeSorter {
             //i = 0, j = 8; k = 0
             if (data[i] >= data[j]) {
                 n[k] = data[j];
-                System.out.println("j incremented" + data[j]);
+                System.out.println("j incremented " + data[j]);
                 j++;
                 k++;
 
             } else { // if (i <= mid) {
                 n[k] = data[i];
-                System.out.println("i incremented" + data[i]);
+                System.out.println("i incremented " + data[i]);
                 i++;
                 k++;
             }
@@ -70,9 +75,15 @@ public class MergeSorter {
             k++;
         }
         System.out.print("Writing to data[] ----------------------- ");
-        for (int d = 0; d < (high - low); d++) {
+        for (int d = 0; d < (high - low +1); d++) {
             data[low + d] = n[d];
             System.out.print(n[d] + " ");
+        }
+        System.out.println();
+        
+        System.out.print("Current state of data[] ++++++++++++++++++++++ ");
+        for (int d : data) {
+            System.out.print(d);
         }
         System.out.println();
     }

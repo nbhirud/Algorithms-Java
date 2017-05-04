@@ -35,24 +35,25 @@ public class MergeSorter {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         System.out.println("sorter. low = "+low+", mid = "+mid+", high = "+high);
         int[] n = new int[high-low];
-        
-        for(int i = low, j = mid+1, k = 0; (i<= mid)&&(j<=high);k++) {
+        int i = low, j = mid+1, k = 0;
+        while(k<(high-low)) {
             //i = 0, j = 8; k = 0
-            if(data[i] >= data[j]) {
+            if((j<=high)&&(data[i] >= data[j])) {
                 n[k] = data[j];
                 System.out.println("j incremented"+data[j]);
                 j++;
                 
             }
-            else  {
+            else  if (i<= mid){
                 n[k] = data[i];
                 System.out.println("i incremented"+data[i]);
                 i++;
                 
             }
+            k++;
         }
-        for(int i = 0; i < (high - low); i++) {
-            data[low+i] = n[i];
+        for(int d = 0; d < (high - low); d++) {
+            data[low+d] = n[d];
         }
     }
 }

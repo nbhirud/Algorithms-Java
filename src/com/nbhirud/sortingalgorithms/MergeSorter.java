@@ -40,40 +40,39 @@ public class MergeSorter {
         int[] n = new int[high - low + 1];
         int i = low, j = mid + 1, k = 0;
         //while (k < (high - low)) {
-        while ((i<=mid)&&(j<=high)) {
+        while ((i <= mid) && (j <= high)) {
             //i = 0, j = 8; k = 0
-            if ((j <= high) && (data[i] >= data[j])) {
+            if (data[i] >= data[j]) {
                 n[k] = data[j];
                 System.out.println("j incremented" + data[j]);
                 j++;
                 k++;
 
-            } else if (i <= mid) {
+            } else { // if (i <= mid) {
                 n[k] = data[i];
                 System.out.println("i incremented" + data[i]);
                 i++;
                 k++;
             }
-            
+
         }
-        
-        
-        while (i < mid) {
+// either of the following 2 while loops could run
+        while (i <= mid) {
             n[k] = data[i];
-            System.out.println("extra i incremented" + data[i]);
+            System.out.println("extra i incremented - " + data[i]);
             i++;
             k++;
         }
-        while (j < high) {
+        while (j <= high) {
             n[k] = data[j];
-            System.out.println("extra j incremented" + data[j]);
+            System.out.println("extra j incremented - " + data[j]);
             j++;
             k++;
         }
         System.out.print("Writing to data[] ----------------------- ");
         for (int d = 0; d < (high - low); d++) {
             data[low + d] = n[d];
-            System.out.print(n[d]+" ");
+            System.out.print(n[d] + " ");
         }
         System.out.println();
     }
